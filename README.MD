@@ -31,14 +31,16 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - `sui::dynamic_object_field` -- Dynamic object fields
 - `sui::transfer` -- Transferring and sharing
 
-## Step by Step (via Sui Client)
-###Prerequisites
+## Step by Step building, publishing, interacting with the module (via Sui Client)
+
+### Prerequisites
 
 ### Publishing the module
 The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
 $sui client publish --gas-budget 10000
 
 ## Pattern Explanation (through demo)
+
 ### <a name="capabilitites"></a> Capabilitites
 
 ### <a name="mtypes"></a> Marker Types
