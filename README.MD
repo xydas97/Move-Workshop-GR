@@ -36,7 +36,7 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 ### Prerequisites
 
 ### Publishing the module
-The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
+The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget: 
   $ sui client publish --gas-budget 10000
 
 ## Pattern Explanation (through demo)
