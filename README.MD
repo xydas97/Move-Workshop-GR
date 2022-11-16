@@ -19,8 +19,8 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 
 ### Patterns
 - [Capabilities](#capabilitites)
+- [One Time Witness](#otw)
 - [Marker types](#mtypes)
-- [One-time witness](#otw)
 - [Hot Potato](#hpotato)
 
 ### Standard Libraries
@@ -107,9 +107,12 @@ You can now check all your owned objects on [Sui explorer](https://explorer.sui.
 ## Pattern Explanation (through demo)
 
 ### <a name="capabilitites"></a> Capabilitites
+Capability is a pattern that allows authorizing actions with an object. One of the most common capabilities is TreasuryCap (defined in sui::coin). In our gold module you can find an example of this pattern. Once the module is initialized, a TreasuryCap of type GOLD is created and transfered to the sender. This ensures that only the owner of this capability object can mint coins of type GOLD. Also, you can see the same example in shop module where we define a ShopAdmin struct. Once the module is initialized, the ShopAdmin capability is transfered to the publisher and is now the only one who can call entry functions that require this capability (eg. stock_axe).   
+
+### <a name="otw"></a> One Time Witness
+One Time Witness (OTW) is a special instance of a type which is created only in the module initializer and is guaranteed to be unique and have only one instance. It is important for cases where we need to make sure that a witness-authorized action was performed only once (for example - creating a new Coin). For a type to be considered as one time witness should have only the drop ability and be named after the module but uppercased. This is what we do in our gold module where we define a GOLD struct to be our one time witness and a full instance of it is passed as the first argument in the init function 
 
 ### <a name="mtypes"></a> Marker Types
 
-### <a name="otw"></a> One-time witness
 
 ### <a name="hpotato"></a> Hot Potato
