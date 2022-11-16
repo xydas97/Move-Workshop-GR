@@ -32,10 +32,15 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - `sui::transfer` -- Transferring and sharing
 
 ## Building, publishing, interacting with the modules (via Sui Client)
-
-
+In order to build a Move package and run code defined in this package, first [install Sui](https://docs.sui.io/build/install)
 
 ### Building the package
+Follow the commands below to clone the repository and build the package:
+```sh
+  $ git clone https://github.com/Eis-D-Z/nftrpg.git
+  $ cd nftrpg
+  $ sui move build
+```
 
 ### Publishing the package
 The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
