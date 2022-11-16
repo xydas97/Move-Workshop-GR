@@ -37,7 +37,7 @@ In order to build a Move package and run code defined in this package, first [in
 ### Building the package
 Follow the commands below to clone the repository and build the package:
 ```sh
-  $ git clone https://github.com/Eis-D-Z/nftrpg.git
+  $ git clone https://github.com/xydas97/Move-Workshop-GR.git
   $ cd nftrpg
   $ sui move build
 ```
