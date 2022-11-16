@@ -32,7 +32,7 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - `sui::transfer` -- Transferring and sharing
 
 ## Building, publishing, interacting with the modules (via Sui Client)
-In order to build a Move package and run code defined in this package, first [install Sui](https://docs.sui.io/build/install).
+In order to build a Move package and run code defined in this package, first [install Sui](https://docs.sui.io/build/install) and [connect to Sui Devnet](https://docs.sui.io/build/devnet).
 
 ### Building the package
 Follow the commands below to clone the repository and build the package:
@@ -55,11 +55,31 @@ The next step, after succesfully building the project, is to publish it on Sui B
 ```
 The immutable object that will be created will represent your package, so it is a good practice to save its id in a variable:
 ```sh
-  $ package = "<ID>"
+  $ package="<ID>"
+```
+Also save your active address in a variable for ease of function calling:
+```sh
+  $ sui client active-address
+  $ address="<ID>"
 ```
 
 ### Creating your first Avatar
-
+Examining the avatar module, you can find out that in order to create an avatar you need to pass some gold. To do that, we first have to mint and transfer some coins of type gold. The only one who has this capability is the address with TreasuryCap<GOLD> object which is created once during the package publishing and transfered to the publisher. To check your owned objects run this command:
+```sh
+  $ sui client objects
+```
+Locate the object with TreasuryCap type and save its id:
+```sh
+  $ cap="<ID>"
+```
+Next thing, create gold coins with the function mint_and_transfer which can be found in [sui package](https://github.com/MystenLabs/sui/blob/main/crates/sui-framework/sources/coin.move). The arguments will be the TreasuryCap object, amount of gold, recipient and the type argument will be the marker type of gold:
+```sh
+  $ sui client call --package 0x2 --module coin --function mint_and_transfer --args "$cap" 10000 "$address" --type-args "$package::gold::GOLD"  --gas-budget 10000
+```
+Save the gold id for usage in avatar creation:
+```sh
+  $ gold="<ID>"
+```
 
 ## Pattern Explanation (through demo)
 
