@@ -43,12 +43,23 @@ Follow the commands below to clone the repository and build the package:
 ```
 
 ### Publishing the package
-The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
+At first, you have to ensure that you have devnet SUI coins under your active address so that you can pay for gas fees:
+```sh
+  $ sui client gas
+```
+If not, you can request from devnet-faucet in Discord server.
+
+The next step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
 ```sh
   $ sui client publish --gas-budget 10000
 ```
+The immutable object that will be created will represent your package, so it is a good practice to save its id in a variable:
+```sh
+  $ package = "<ID>"
+```
 
 ### Creating your first Avatar
+
 
 ## Pattern Explanation (through demo)
 
