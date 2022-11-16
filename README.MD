@@ -39,9 +39,9 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 
 ### Publishing the package
 The first step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
-'''sh
+```sh
   $ sui client publish --gas-budget 10000
-'''
+```
 ## Pattern Explanation (through demo)
 
 ### <a name="capabilitites"></a> Capabilitites
