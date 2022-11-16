@@ -48,7 +48,6 @@ At first, you have to ensure that you have devnet SUI coins under your active ad
   $ sui client gas
 ```
 If not, you can request from devnet-faucet in Discord server.
-
 The next step, after succesfully building the project, is to publish it on Sui Blockchain giving a sufficient gas budget:
 ```sh
   $ sui client publish --gas-budget 10000
@@ -80,6 +79,30 @@ Save the gold id for usage in avatar creation:
 ```sh
   $ gold="<ID>"
 ```
+Final step, decide your avatar's name and call the create function of avatar module with all the needed arguments:
+```sh
+  $ sui client call --package "$package" --module avatar --function create --args "Name" "$gold" "$address" --gas-budget 10000
+```
+Keep your avatar's id so that you can equip it with a weapon of your choice:
+```sh
+  $ avatar="<ID>"
+```
+
+### Equiping your avatar
+
+After succesfully creating your first avatar, it is time to equip it with an appropriate weapon. The way to do, is to create it with the function get_weapon, choosing its type (0, 1, or 2) and send it to a recipient:
+```sh
+  $ sui client call --package "$package" --module weapon --function get_weapon --args "2" "$address" --gas-budget 10000
+```
+In this case a bow is created and sent to your address:
+```sh
+  $ bow="<ID>"
+```
+Last step, add the weapon you just created to your avatar by calling the function wield and giving the appropriate type argument:
+```sh
+  $ sui client call --package "$package" --module avatar --function wield --args "$avatar" "$bow" --type-args "$package::weapon::Bow" --gas-budget 10000
+```
+You can now check all your owned objects on [Sui explorer](https://explorer.sui.io/) by entering your active address.
 
 ## Pattern Explanation (through demo)
 
