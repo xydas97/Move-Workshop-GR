@@ -32,7 +32,7 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - `sui::transfer` -- Transferring and sharing
 
 ## Building, publishing, interacting with the modules (via Sui Client)
-In order to build a Move package and run code defined in this package, first [install Sui](https://docs.sui.io/build/install)
+In order to build a Move package and run code defined in this package, first [install Sui](https://docs.sui.io/build/install).
 
 ### Building the package
 Follow the commands below to clone the repository and build the package:
@@ -47,6 +47,9 @@ The first step, after succesfully building the project, is to publish it on Sui 
 ```sh
   $ sui client publish --gas-budget 10000
 ```
+
+### Creating your first Avatar
+
 ## Pattern Explanation (through demo)
 
 ### <a name="capabilitites"></a> Capabilitites
