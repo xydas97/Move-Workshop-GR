@@ -116,3 +116,4 @@ One Time Witness (OTW) is a special instance of a type which is created only in 
 
 
 ### <a name="hpotato"></a> Hot Potato
+Hot Potato is a name for a struct that has no abilities, hence it can only be packed and unpacked in its module. In this struct, you must call function B after function A in the case where function A returns a potato and function B consumes it. In our case, a hot potato appears in the shop module. Invoice struct has no abilities and only one field. It is created and returned from function buy_axe (function A) and then it is passed in function pay_invoice (function B) to consume it. With this pattern you ensure that buy_axe_in_full entry function will work only if invoice get paid (consumed) in pay_invoice function. Also, it offers some extra functionalities, as invoice can be passed in another function before consumed which will reduce its value when a trade happens. 
