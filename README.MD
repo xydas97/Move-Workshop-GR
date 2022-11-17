@@ -27,7 +27,6 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - `std::option` -- Options
 - `std::string` -- Strings (built on top of vectors)
 - `sui::coin`, `sui::balance` -- Generic Token API
-- `sui::dynamic_field` -- Dynamic fields 
 - `sui::dynamic_object_field` -- Dynamic object fields
 - `sui::transfer` -- Transferring and sharing
 
