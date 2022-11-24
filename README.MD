@@ -16,6 +16,7 @@ It is structured according to Amnn's Move Workshop. You can find the orginal @: 
 - References
 - Structs
 - Vectors
+- Dynamic fields 
 
 ### Patterns
 - [Capabilities](#capabilitites)
@@ -116,3 +117,7 @@ Marker type is a struct that has no abilities and no fields. It is used to disti
 
 ### <a name="hpotato"></a> Hot Potato
 Hot Potato is a name for a struct that has no abilities, hence it can only be packed and unpacked in its module. In this struct, you must call function B after function A in the case where function A returns a potato and function B consumes it. In this project, a hot potato appears in the shop module. Invoice struct has no abilities and only one field. It is created and returned from function buy_axe (function A) and then it is passed in function pay_invoice (function B) to consume it. With this pattern you ensure that buy_axe_in_full entry function will work only if invoice get paid (consumed) in pay_invoice function. Also, it offers some extra functionalities, as invoice can be passed in another function before consumed and modify its value.
+
+### Inventory Dynamic Fields graphic
+
+![inv](https://github.com/xydas97/Move-Workshop-GR/blob/main/inventory_dynamic_field.png)
